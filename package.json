@@ -1,0 +1,20 @@
+{
+  "name": "@aqualunae/util",
+  "version": "1.0.0",
+  "description": "String helper functions for JavaScript.",
+  "main": "util.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Tristan Remple",
+    "email": "tristan.remple@outlook.com",
+    "url": "https://aqualunae.ca"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC",
+  "type": "module"
+}
