@@ -22,6 +22,6 @@ Each function takes one string as an argument and returns one string. If the inp
 
 Each function takes one string as an argument and returns an object. The object's result property will contain the correctly formatted input, if possible, or null if the input is not in a valid format. The object's optional error property will contain an error message string if the input is not valid.
 
-- util.valid.phone() checks a string against 3 possible phone number formats, and returns an object with a result string in 000-000-0000 format.
+- util.valid.phone() checks a string against 3 possible phone number formats, and returns an object with a result string in 000-000-0000 format. Example: { result: 123-123-1234 }
 
-- util.valid.email() checks a string against an email regex, and returns an object with a result string containing the input.
+- util.valid.email() checks a string against an email regex, and returns an object with a result string containing the input. Example: { result: example@email.com }
