@@ -3,6 +3,14 @@
 
 function capitalize(str) {
 
+    if (typeof str === "number") {
+        str = str.toString()
+    }
+
+    if (typeof str !== "string") {
+        return null
+    }
+
     // check if it's blank (loose equality intentional)
     if (str == "" || str == null) {
         return ""
