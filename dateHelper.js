@@ -7,7 +7,13 @@ const months = [
 
 // This function takes a date in any JS-readable format and returns a date that is easy for humans to read.
 export function friendlyDate(dateString) {
-    const date = new Date(dateString)
+    let date
+    if (dateString === "" || dateString === null) {
+        date = new Date()
+    } else {
+        date = new Date(dateString)
+    }
+    if (date == "Invalid Date") { return null }
     const day = date.getDate()
     const month = months[date.getMonth()]
     const year = date.getFullYear()
@@ -16,7 +22,13 @@ export function friendlyDate(dateString) {
 
 // This function takes a date in any JS-readable format and returns a date that is formatted the way administrative staff are used to.
 export function adminDate(dateString) {
-    const date = new Date(dateString)
+    let date
+    if (dateString === "" || dateString === null) {
+        date = new Date()
+    } else {
+        date = new Date(dateString)
+    }
+    if (date == "Invalid Date") { return null }
     const day = date.getDate().toString()
     const month = (date.getMonth() + 1).toString()
     const year = date.getFullYear()
@@ -25,8 +37,14 @@ export function adminDate(dateString) {
 
 // This function takes a date in any JS-readable format and formats it for SQL.
 export function sqlDate(dateString) {
-    const date = new Date(dateString)
+    let date
+    if (dateString === "" || dateString === null) {
+        date = new Date()
+    } else {
+        date = new Date(dateString)
+    }
+    if (date == "Invalid Date") { return null }
     const stringDate = date.toLocaleDateString()
     const stringTime = date.toTimeString().split(" ")[0]
-    return `${stringDate}T${stringTime}`
+    return `${stringDate} ${stringTime}`
 }

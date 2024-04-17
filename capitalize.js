@@ -23,7 +23,7 @@ function capitalize(str) {
     // capitalize the first letter of each word and add it to the new string
     for (let i = 0; i < wordArr.length; i++) {
         let firstLetter = wordArr[i][0].toUpperCase()
-        let rest = wordArr[i].slice(1)
+        let rest = wordArr[i].slice(1).toLowerCase()
         let word = firstLetter + rest
         newStr += word + " "
     }
