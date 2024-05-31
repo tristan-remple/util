@@ -1,5 +1,5 @@
-import capitalize from "./capitalize.js"
 import { friendlyDate, adminDate, sqlDate } from "./dateHelper.js"
+import { unCamel, capitalize } from "./string.js"
 import { validateEmail, validatePhone } from "./validate.js"
 
 class util {
@@ -7,6 +7,9 @@ class util {
     str = {
         title(string) {
             return capitalize(string)
+        },
+        unCamel(string) {
+            return unCamel(string)
         }
     }
     

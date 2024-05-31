@@ -1,7 +1,7 @@
 //------ MODULE INFO
 // This helper function takes an all-lowercase string and capitalizes it like a title.
 
-function capitalize(str) {
+export const capitalize = (str) => {
 
     if (typeof str === "number") {
         str = str.toString()
@@ -33,4 +33,8 @@ function capitalize(str) {
     return newStr
 }
 
-export default capitalize
+export const unCamel = (str) => {
+    return str
+        .replace(/([A-Z])/g, ' $1')
+        .replace(/^./, str => str.toUpperCase())
+}
