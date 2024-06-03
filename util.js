@@ -1,6 +1,6 @@
 import { friendlyDate, adminDate, sqlDate } from "./dateHelper.js"
 import { unCamel, capitalize } from "./string.js"
-import { validateEmail, validatePhone } from "./validate.js"
+import { validateEmail, validatePhone, validateUrl, validateLongString, validateShortString } from "./validate.js"
 
 class util {
 
@@ -31,6 +31,15 @@ class util {
         },
         phone(phone) {
             return validatePhone(phone)
+        },
+        url(url) {
+            return validateUrl(url)
+        },
+        short(str) {
+            return validateShortString(str)
+        },
+        long(str) {
+            return validateLongString(str)
         }
     }
     

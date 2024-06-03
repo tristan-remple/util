@@ -8,6 +8,14 @@ export const validatePhone = (number) => {
     // Formats 0000000000 and (000) 000-0000 are converted.
     // Other formats return an error.
 
+    // check that string is defined
+    if (!str) {
+        return { 
+            result: null, 
+            error: "Text is empty." 
+        }
+    }
+
     // remove whitespace from start and end
     number = number.trim()
 
@@ -43,6 +51,14 @@ export const validatePhone = (number) => {
 
 export const validateEmail = (email) => {
 
+    // check that string is defined
+    if (!str) {
+        return { 
+            result: null, 
+            error: "Text is empty." 
+        }
+    }
+
     // remove whitespace from start and end
     email = email.trim()
 
@@ -54,6 +70,107 @@ export const validateEmail = (email) => {
     // otherwise, return an error
     return {
         result: null,
-        error: `${email} is not a valid phone email.`
+        error: `${email} is not a valid email.`
+    }
+}
+
+export const validateUrl = (url) => {
+
+    // check that string is defined
+    if (!str) {
+        return { 
+            result: null, 
+            error: "Text is empty." 
+        }
+    }
+
+    // remove whitespace from start and end
+    url = url.trim()
+
+    // check if it matched URL format.
+    if (url.match(/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/)) {
+        return { result: url }
+    }
+
+    // otherwise, return an error
+    return {
+        result: null,
+        error: `${url} is not a valid URL.`
+    }
+}
+
+export const validateShortText = (str) => {
+
+    // check that string is defined
+    if (!str) {
+        return { 
+            result: null, 
+            error: "Text is empty." 
+        }
+    }
+
+    // remove whitespace from start and end
+    str = str.trim()
+
+    // check string length
+    if (str.length > 255) {
+        return {
+            result: null,
+            error: "Text is too long."
+        }
+    } else if (str.length === 0) {
+        return {
+            result: null,
+            error: "Text is empty."
+        }
+    }
+
+    // check that all characters are on the whitelist
+    if (str.match(/^[a-zA-Z0-9!@#$%^&*()_~'.,?:;=\/\s-]{1,255}$/)) {
+        return { result: str }
+    }
+
+    // otherwise, return an error
+    return {
+        result: null,
+        error: "Text contains invalid characters."
+    }
+}
+
+export const validateLongText = (str) => {
+
+    // check that string is defined
+    if (!str) {
+        return { 
+            result: null, 
+            error: "Text is empty." 
+        }
+    }
+
+    // remove whitespace from start and end
+    str = str.trim()
+
+    // check string length
+    if (str.length > 2048) {
+        return {
+            result: null,
+            error: "Text is too long."
+        }
+    } else if (str.length === 0) {
+        return {
+            result: null,
+            error: "Text is empty."
+        }
+    }
+
+    // check that all characters are on the whitelist
+    if (str.match(/^[a-zA-Z0-9!@#$%^&*()_~'.,?:;=\/\s-]{1,2048}$/)) {
+        return { result: str }
+    }
+
+    // otherwise, return an error
+    return {
+        result: null,
+        error: "Text contains invalid characters."
     }
 }

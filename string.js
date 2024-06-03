@@ -12,7 +12,7 @@ export const capitalize = (str) => {
     }
 
     // check if it's blank (loose equality intentional)
-    if (str == "" || str == null) {
+    if (str == "" || str == null || str == undefined) {
         return ""
     }
 
