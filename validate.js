@@ -52,7 +52,7 @@ export const validatePhone = (number) => {
 export const validateEmail = (email) => {
 
     // check that string is defined
-    if (!str) {
+    if (!email) {
         return { 
             result: null, 
             error: "Text is empty." 

@@ -1,6 +1,6 @@
 {
   "name": "@aqualunae/util",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "String helper functions for JavaScript.",
   "main": "util.js",
   "scripts": {
