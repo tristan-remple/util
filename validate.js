@@ -77,7 +77,7 @@ export const validateEmail = (email) => {
 export const validateUrl = (url) => {
 
     // check that string is defined
-    if (!str) {
+    if (!url) {
         return { 
             result: null, 
             error: "Text is empty." 
