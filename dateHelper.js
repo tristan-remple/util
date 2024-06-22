@@ -20,6 +20,21 @@ export function friendlyDate(dateString) {
     return `${day} ${month}, ${year}`
 }
 
+// This function takes a date in any JS-readable format and returns a date that is easy for humans to read.
+export function friendlyShortDate(dateString) {
+    let date
+    if (dateString === "" || dateString === null) {
+        date = new Date()
+    } else {
+        date = new Date(dateString)
+    }
+    if (date == "Invalid Date") { return null }
+    const day = date.getDate()
+    const month = months[date.getMonth()].slice(0, 3)
+    const year = date.getFullYear()
+    return `${month} ${day}, ${year}`
+}
+
 // This function takes a date in any JS-readable format and returns a date that is formatted the way administrative staff are used to.
 export function adminDate(dateString) {
     let date

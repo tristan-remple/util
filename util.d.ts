@@ -5,6 +5,7 @@ declare module '@aqualunae/util' {
     }
     export const date = {
         friendly: (str: string) => string,
+        short: (str: string) => string,
         admin: (str: string) => string,
         sql: (str: string) => string
     }
